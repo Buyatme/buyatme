@@ -1,63 +1,195 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buyatme - Premium App Store</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyatme — Akun Premium</title>
+
+<style>
+:root{
+  --pink:#ff6fae;
+  --soft:#fff0f6;
+  --dark:#3a3a3a;
+}
+
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background:var(--soft);
+  color:var(--dark);
+}
+
+header{
+  background:linear-gradient(135deg,#ff9acb,#ff6fae);
+  color:white;
+  padding:40px 20px;
+  text-align:center;
+}
+
+header h1{margin:0;font-size:32px}
+header p{opacity:.95}
+
+section{
+  padding:24px 16px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{text-align:center;margin-bottom:20px}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.product-img{
+  width:100%;
+  height:140px;
+  object-fit:contain;
+  background:#111;
+  border-radius:14px;
+  margin-bottom:10px;
+}
+
+.price{font-weight:bold;color:var(--pink)}
+
+.order-btn{
+  display:block;
+  margin-top:12px;
+  background:var(--pink);
+  color:white;
+  padding:10px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.order-btn:hover{opacity:.9}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.popup-content{
+  background:white;
+  padding:22px;
+  border-radius:20px;
+  max-width:360px;
+  width:90%;
+  text-align:center;
+}
+
+.popup-content img{
+  width:100%;
+  border-radius:14px;
+}
+
+.close{
+  margin-top:10px;
+  background:#ddd;
+  padding:8px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+footer{
+  background:#ffe1ee;
+  padding:20px;
+  text-align:center;
+  font-size:14px;
+}
+</style>
 </head>
-<body class="bg-gray-50 text-gray-900">
 
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center px-10">
-        <h1 class="text-2xl font-bold text-blue-600">Buyatme</h1>
-        <a href="https://wa.me/6285930410446" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition">Hubungi Admin</a>
-    </nav>
+<body>
 
-    <header class="py-20 px-10 text-center">
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Aplikasi Premium <span class="text-blue-600">Harga Terjangkau</span></h2>
-        <p class="text-gray-600 text-lg mb-8">Dapatkan akses premium Netflix, Spotify, Canva, dan lainnya hanya di Buyatme.</p>
-        <a href="#produk" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-bold shadow-lg hover:bg-blue-700">Lihat Katalog</a>
-    </header>
+<header>
+  <h1> Buyatme</h1>
+  <p>Akun Premium Murah • Aman • Trusted</p>
+  <a class="order-btn" onclick="openPay()">Bayar Sekarang</a>
+</header>
 
-    <section id="produk" class="py-16 px-10 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold text-center mb-12">Produk Terlaris</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="bg-white p-6 rounded-2xl shadow-md border hover:border-blue-500 transition">
-                <div class="text-blue-600 text-4xl mb-4 font-bold">ðŸŽ¬</div>
-                <h4 class="text-xl font-bold mb-2">Netflix Premium</h4>
-                <p class="text-gray-500 mb-4">4K Ultra HD, Anti On-Hold, Full Garansi.</p>
-                <p class="text-2xl font-bold text-blue-600 mb-6">Rp 35.000 <span class="text-sm text-gray-400">/bulan</span></p>
-                <a href="https://wa.me/6285930410446?text=Halo%20Buyatme,%20saya%20mau%20order%20Netflix" class="block text-center bg-gray-900 text-white py-2 rounded-lg font-bold hover:bg-black">Beli Sekarang</a>
-            </div>
+<section>
+<h2> Produk Populer</h2>
+<div class="products">
 
-            <div class="bg-white p-6 rounded-2xl shadow-md border hover:border-blue-500 transition">
-                <div class="text-green-500 text-4xl mb-4 font-bold">ðŸŽ§</div>
-                <h4 class="text-xl font-bold mb-2">Spotify Family</h4>
-                <p class="text-gray-500 mb-4">Bisa pakai akun sendiri, Full Garansi.</p>
-                <p class="text-2xl font-bold text-blue-600 mb-6">Rp 20.000 <span class="text-sm text-gray-400">/bulan</span></p>
-                <a href="https://wa.me/6285930410446?text=Halo%20Buyatme,%20saya%20mau%20order%20Spotify" class="block text-center bg-gray-900 text-white py-2 rounded-lg font-bold hover:bg-black">Beli Sekarang</a>
-            </div>
+<div class="card">
+<img src="images/netflix.png" class="product-img">
+<h3>Netflix Premium</h3>
+<p class="price">Mulai 28k</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-md border hover:border-blue-500 transition">
-                <div class="text-purple-500 text-4xl mb-4 font-bold">ðŸŽ¨</div>
-                <h4 class="text-xl font-bold mb-2">Canva Pro</h4>
-                <p class="text-gray-500 mb-4">Desain tanpa batas, fitur pro terbuka semua.</p>
-                <p class="text-2xl font-bold text-blue-600 mb-6">Rp 15.000 <span class="text-sm text-gray-400">/bulan</span></p>
-                <a href="https://wa.me/6285930410446?text=Halo%20Buyatme,%20saya%20mau%20order%20Canva" class="block text-center bg-gray-900 text-white py-2 rounded-lg font-bold hover:bg-black">Beli Sekarang</a>
-            </div>
+<div class="card">
+<img src="images/disney.png" class="product-img">
+<h3>Disney+ Hotstar</h3>
+<p class="price">35k / bulan</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
 
-        </div>
-    </section>
+<div class="card">
+<img src="images/vidio.png" class="product-img">
+<h3>Vidio Platinum</h3>
+<p class="price">Mulai 25k</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <p class="mb-2 font-bold text-xl">Buyatme</p>
-        <p class="text-gray-400">Â© 2026 Solusi Aplikasi Premium Murah & Legal.</p>
-    </footer>
+<div class="card">
+<img src="images/canva.png" class="product-img">
+<h3>Canva Pro</h3>
+<p class="price">16k</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2> Rating Customer</h2>
+<div class="card"><br><b>Aulia</b><br>Fast respon & aman</div>
+<div class="card"><br><b>Dika</b><br>QRIS langsung masuk</div>
+</section>
+
+<footer>
+ WhatsApp: 0859-3041-0446<br>
+IG: @buuyatmee<br>
+© 2026 Buyatme
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="pay">
+  <div class="popup-content">
+    <h3> Pembayaran QRIS</h3>
+    <img src="qris-buyatme.jpg">
+    <p>Scan QRIS lalu kirim bukti ke WhatsApp</p>
+    <a class="order-btn"
+       href="https://wa.me/6285930410446?text=Halo+Buyatme,+saya+sudah+bayar">
+       Konfirmasi WA
+    </a>
+    <div class="close" onclick="closePay()">Tutup</div>
+  </div>
+</div>
+
+<script>
+function openPay(){document.getElementById("pay").style.display="flex"}
+function closePay(){document.getElementById("pay").style.display="none"}
+</script>
 
 </body>
 </html>
