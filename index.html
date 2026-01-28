@@ -9,12 +9,12 @@
 :root{
   --pink:#ff6fae;
   --soft:#fff0f6;
-  --dark:#3a3a3a;
+  --dark:#333;
 }
 
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family:Arial, sans-serif;
   background:var(--soft);
   color:var(--dark);
 }
@@ -22,15 +22,12 @@ body{
 header{
   background:linear-gradient(135deg,#ff9acb,#ff6fae);
   color:white;
-  padding:40px 20px;
   text-align:center;
+  padding:40px 20px;
 }
 
-header h1{margin:0;font-size:32px}
-header p{opacity:.95}
-
 section{
-  padding:24px 16px;
+  padding:25px 15px;
   max-width:1100px;
   margin:auto;
 }
@@ -39,7 +36,7 @@ h2{text-align:center;margin-bottom:20px}
 
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   gap:18px;
 }
 
@@ -47,7 +44,7 @@ h2{text-align:center;margin-bottom:20px}
   background:white;
   border-radius:18px;
   padding:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
   text-align:center;
 }
 
@@ -60,8 +57,6 @@ h2{text-align:center;margin-bottom:20px}
   margin-bottom:10px;
 }
 
-.price{font-weight:bold;color:var(--pink)}
-
 .order-btn{
   display:block;
   margin-top:12px;
@@ -70,10 +65,17 @@ h2{text-align:center;margin-bottom:20px}
   padding:10px;
   border-radius:12px;
   text-decoration:none;
-  font-weight:600;
+  font-weight:bold;
 }
 
-.order-btn:hover{opacity:.9}
+.price b{color:var(--pink)}
+
+footer{
+  background:#ffe1ee;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
 
 /* POPUP */
 .popup{
@@ -85,21 +87,18 @@ h2{text-align:center;margin-bottom:20px}
   align-items:center;
   z-index:999;
 }
-
-.popup-content{
+.popup-box{
   background:white;
-  padding:22px;
-  border-radius:20px;
+  padding:20px;
+  border-radius:18px;
   max-width:360px;
   width:90%;
   text-align:center;
 }
-
-.popup-content img{
+.popup-box img{
   width:100%;
-  border-radius:14px;
+  border-radius:12px;
 }
-
 .close{
   margin-top:10px;
   background:#ddd;
@@ -107,83 +106,157 @@ h2{text-align:center;margin-bottom:20px}
   border-radius:10px;
   cursor:pointer;
 }
-
-footer{
-  background:#ffe1ee;
-  padding:20px;
-  text-align:center;
-  font-size:14px;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1> Buyatme</h1>
-  <p>Akun Premium Murah • Aman • Trusted</p>
-  <a class="order-btn" onclick="openPay()">Bayar Sekarang</a>
+<h1> Buyatme</h1>
+<p>Akun Premium Murah • Aman • Trusted</p>
+<a class="order-btn" onclick="openPay()">Bayar Sekarang</a>
 </header>
 
 <section>
-<h2> Produk Populer</h2>
+<h2> Board Pricelist Buyatme</h2>
 <div class="products">
 
 <div class="card">
 <img src="images/netflix.png" class="product-img">
 <h3>Netflix Premium</h3>
-<p class="price">Mulai 28k</p>
-<a class="order-btn" onclick="openPay()">Order</a>
-</div>
-
-<div class="card">
-<img src="images/disney.png" class="product-img">
-<h3>Disney+ Hotstar</h3>
-<p class="price">35k / bulan</p>
+<p class="price">
+1 profil 2 user — <b>28k</b><br>
+1 profil 1 user — <b>50k</b>
+</p>
 <a class="order-btn" onclick="openPay()">Order</a>
 </div>
 
 <div class="card">
 <img src="images/vidio.png" class="product-img">
 <h3>Vidio Platinum</h3>
-<p class="price">Mulai 25k</p>
+<p class="price">
+Private 1 bulan — <b>41k</b><br>
+Sharing 1 bulan — <b>25k</b><br>
+Sharing 2 bulan — <b>35k</b><br>
+Sharing 3 bulan — <b>55k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/disney.png" class="product-img">
+<h3>Disney+ Hotstar</h3>
+<p class="price">Sharing 1 bulan — <b>35k</b></p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/amazon.png" class="product-img">
+<h3>Amazon Prime Video</h3>
+<p class="price">
+Private 1 bulan — <b>32k</b><br>
+Sharing 1 bulan — <b>20k</b><br>
+Sharing 2 bulan — <b>35k</b>
+</p>
 <a class="order-btn" onclick="openPay()">Order</a>
 </div>
 
 <div class="card">
 <img src="images/canva.png" class="product-img">
 <h3>Canva Pro</h3>
-<p class="price">16k</p>
+<p class="price">1 bulan — <b>16k</b></p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/capcut.png" class="product-img">
+<h3>CapCut Pro</h3>
+<p class="price">
+Private 1 bulan — <b>35k</b><br>
+Sharing Mobile — <b>20k</b><br>
+Sharing PC — <b>25k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/viu.png" class="product-img">
+<h3>VIU Premium Anti Limit</h3>
+<p class="price">
+1 bulan <b>25k</b> | 2 bulan <b>31k</b><br>
+3 bulan <b>45k</b> | 6 bulan <b>50k</b><br>
+1 tahun <b>55k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/viu.png" class="product-img">
+<h3>VIU Premium Biasa</h3>
+<p class="price">
+1 bulan <b>16k</b> | 2 bulan <b>20k</b><br>
+3 bulan <b>26k</b> | 6 bulan <b>35k</b><br>
+1 tahun <b>40k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/wetv.png" class="product-img">
+<h3>WeTV VIP</h3>
+<p class="price">
+Private 1 bulan — <b>35k</b><br>
+Sharing — <b>20k</b><br>
+Sharing TV — <b>28k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/iqiyi.png" class="product-img">
+<h3>iQIYI</h3>
+<p class="price">
+Private 1 bulan — <b>37k</b><br>
+Sharing — <b>20k</b>
+</p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/loklok.png" class="product-img">
+<h3>Loklok</h3>
+<p class="price">Sharing 1 bulan — <b>26k</b></p>
+<a class="order-btn" onclick="openPay()">Order</a>
+</div>
+
+<div class="card">
+<img src="images/apple-music.png" class="product-img">
+<h3>Apple Music</h3>
+<p class="price">3 bulan via iMessage — <b>33k</b></p>
 <a class="order-btn" onclick="openPay()">Order</a>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2> Rating Customer</h2>
-<div class="card"><br><b>Aulia</b><br>Fast respon & aman</div>
-<div class="card"><br><b>Dika</b><br>QRIS langsung masuk</div>
-</section>
-
 <footer>
  WhatsApp: 0859-3041-0446<br>
 IG: @buuyatmee<br>
-© 2026 Buyatme
+© Buyatme
 </footer>
 
-<!-- POPUP -->
+<!-- POPUP BAYAR -->
 <div class="popup" id="pay">
-  <div class="popup-content">
-    <h3> Pembayaran QRIS</h3>
-    <img src="qris-buyatme.jpg">
-    <p>Scan QRIS lalu kirim bukti ke WhatsApp</p>
-    <a class="order-btn"
-       href="https://wa.me/6285930410446?text=Halo+Buyatme,+saya+sudah+bayar">
-       Konfirmasi WA
-    </a>
-    <div class="close" onclick="closePay()">Tutup</div>
-  </div>
+<div class="popup-box">
+<h3> Scan QRIS Buyatme</h3>
+<img src="qris-buyatme.jpg">
+<p>Scan QRIS lalu kirim bukti ke WhatsApp</p>
+<a class="order-btn"
+href="https://wa.me/6285930410446?text=Halo+Buyatme,+saya+sudah+bayar">
+Konfirmasi WA
+</a>
+<div class="close" onclick="closePay()">Tutup</div>
+</div>
 </div>
 
 <script>
